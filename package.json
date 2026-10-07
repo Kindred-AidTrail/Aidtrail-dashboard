@@ -1,0 +1,44 @@
+{
+  "name": "@kindred-aidtrail/dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AidTrail Web Application: Multi-role humanitarian disbursement dashboard on Stellar and Soroban",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@stellar/freighter-api": "^3.0.1",
+    "@stellar/stellar-sdk": "^13.3.0",
+    "clsx": "^2.1.1",
+    "html5-qrcode": "^2.3.8",
+    "idb": "^8.0.2",
+    "lucide-react": "^0.475.0",
+    "next": "14.2.24",
+    "qrcode.react": "^4.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.9",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
