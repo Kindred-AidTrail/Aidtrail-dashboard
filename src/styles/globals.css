@@ -82,3 +82,31 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
+
+/* Accessibility Enhancement Overrides */
+html.high-contrast {
+  filter: contrast(125%);
+}
+html.high-contrast .glass-panel,
+html.high-contrast .glass-card,
+html.high-contrast card,
+html.high-contrast div[class*="border-"] {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+html.font-size-large {
+  font-size: 115%;
+}
+
+html.font-size-xlarge {
+  font-size: 130%;
+}
+

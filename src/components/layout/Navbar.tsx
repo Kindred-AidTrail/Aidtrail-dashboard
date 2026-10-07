@@ -22,6 +22,7 @@ import {
   X,
 } from 'lucide-react';
 import { clsx } from 'clsx';
+import A11yControls from './A11yControls';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -107,8 +108,11 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Right Action Tools: Language, Wallet Status */}
+          {/* Right Action Tools: Language, Accessibility, Wallet Status */}
           <div className="flex items-center gap-2.5">
+            {/* Accessibility Controls */}
+            <A11yControls />
+
             {/* Language Selector */}
             <div className="relative flex items-center text-xs text-slate-300">
               <Globe className="w-3.5 h-3.5 absolute left-2.5 text-slate-400 pointer-events-none" />
