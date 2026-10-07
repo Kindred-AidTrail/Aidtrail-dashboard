@@ -6,6 +6,7 @@ import { AuthProvider } from '../context/AuthContext';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { PwaRegister } from '../components/pwa/PwaRegister';
+import OfflineQueueBanner from '../components/offline/OfflineQueueBanner';
 
 export const metadata: Metadata = {
   title: 'Kindred AidTrail - Transparent Humanitarian Aid on Stellar',
@@ -47,6 +48,7 @@ export default function RootLayout({
             <AuthProvider>
               <PwaRegister />
               <Navbar />
+              <OfflineQueueBanner />
               <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {children}
               </main>
