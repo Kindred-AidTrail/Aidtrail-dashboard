@@ -9,7 +9,7 @@ import { Badge } from '../../../components/ui/Badge';
 import { Input } from '../../../components/ui/Input';
 import { Alert } from '../../../components/ui/Alert';
 import TransactionStatusModal from '../../../components/ui/TransactionStatusModal';
-import { contractClient } from '../../../lib/contract-client';
+import { contractClient, toStroops } from '../../../lib/contract-client';
 import {
   ArrowLeft,
   Plus,
@@ -109,7 +109,7 @@ export default function NgoMilestonesPage() {
     setErrorMessage(null);
 
     try {
-      const amountUnits = BigInt(Math.floor(numAmt * 1_000_000));
+      const amountUnits = toStroops(numAmt);
       const simResult = await contractClient.addMilestone(
         selectedProgramId,
         amountUnits,

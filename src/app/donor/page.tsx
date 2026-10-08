@@ -8,7 +8,7 @@ import { Badge } from '../../components/ui/Badge';
 import { Input } from '../../components/ui/Input';
 import { Alert } from '../../components/ui/Alert';
 import TransactionStatusModal from '../../components/ui/TransactionStatusModal';
-import { contractClient } from '../../lib/contract-client';
+import { contractClient, toStroops } from '../../lib/contract-client';
 import {
   HeartHandshake,
   DollarSign,
@@ -106,10 +106,10 @@ export default function DonorPortalPage() {
     setErrorMessage(null);
 
     try {
-      // Simulate Soroban contract call
+      // Simulate Soroban contract call with 7-decimal stroops precision
       const simResult = await contractClient.fundProgram(
         selectedProgramId,
-        BigInt(Math.floor(numAmount * 1_000_000)),
+        toStroops(numAmount),
         address
       );
 

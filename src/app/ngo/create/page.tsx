@@ -10,7 +10,7 @@ import { Badge } from '../../../components/ui/Badge';
 import { Input } from '../../../components/ui/Input';
 import { Alert } from '../../../components/ui/Alert';
 import TransactionStatusModal from '../../../components/ui/TransactionStatusModal';
-import { contractClient } from '../../../lib/contract-client';
+import { contractClient, toStroops } from '../../../lib/contract-client';
 import {
   ArrowLeft,
   ArrowRight,
@@ -80,7 +80,7 @@ export default function CreateProgramPage() {
     setErrorMessage(null);
 
     try {
-      const budgetUnits = BigInt(Math.floor(parseFloat(formData.targetAmount || '0') * 1_000_000));
+      const budgetUnits = toStroops(formData.targetAmount || '0');
       const simResult = await contractClient.createProgram(
         formData.title,
         budgetUnits,
